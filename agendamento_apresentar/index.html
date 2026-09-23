@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarberShop - Sistema de Agendamento</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-cut"></i>
+                <div class="logo-text">
+                    <span class="brand">BARBER</span>
+                    <span class="brand-sub">SHOP</span>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-item active">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Agendamentos</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-users"></i>
+                        <span>Clientes</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Barbeiros</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-scissors"></i>
+                        <span>Serviços</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>Financeiro</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Relatórios</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Configurações</span>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar">AD</div>
+                    <div class="user-info">
+                        <span class="user-name">Admin</span>
+                        <span class="user-role">Proprietário</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <h1>Painel de Agendamentos</h1>
+                    <p>Bem-vindo de volta! Aqui está o resumo do seu dia.</p>
+                </div>
+                <div class="header-right">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Buscar cliente ou agendamento...">
+                    </div>
+                    <button class="btn-icon-notify">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    <button class="btn-primary">
+                        <i class="fas fa-plus"></i>
+                        Novo Agendamento
+                    </button>
+                </div>
+            </header>
+
+            <!-- Stats Cards -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <div class="stat-info">
+                        <p>Hoje</p>
+                        <h3>12</h3>
+                        <span class="stat-trend up">
+                            <i class="fas fa-arrow-up"></i> 3 desde ontem
+                        </span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon success">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <p>Confirmados</p>
+                        <h3>8</h3>
+                        <span class="stat-trend">67% do total</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon warning">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <p>Pendentes</p>
+                        <h3>4</h3>
+                        <span class="stat-trend">Aguardando confirmação</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon money">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-info">
+                        <p>Faturamento Hoje</p>
+                        <h3>R$ 680</h3>
+                        <span class="stat-trend up">
+                            <i class="fas fa-arrow-up"></i> 12% vs ontem
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content Grid -->
+            <div class="content-grid">
+                <!-- Calendar Section -->
+                <section class="calendar-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-calendar-alt"></i> Calendário</h2>
+                        <div class="calendar-controls">
+                            <button class="btn-icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <span>Dezembro 2024</span>
+                            <button class="btn-icon">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="calendar">
+                        <div class="calendar-header">
+                            <div class="day-header">Dom</div>
+                            <div class="day-header">Seg</div>
+                            <div class="day-header">Ter</div>
+                            <div class="day-header">Qua</div>
+                            <div class="day-header">Qui</div>
+                            <div class="day-header">Sex</div>
+                            <div class="day-header">Sáb</div>
+                        </div>
+                        <div class="calendar-body">
+                            <div class="calendar-day other-month">1</div>
+                            <div class="calendar-day other-month">2</div>
+                            <div class="calendar-day">3</div>
+                            <div class="calendar-day">4</div>
+                            <div class="calendar-day has-event">5</div>
+                            <div class="calendar-day has-event">6</div>
+                            <div class="calendar-day has-event">7</div>
+                            <div class="calendar-day">8</div>
+                            <div class="calendar-day has-event">9</div>
+                            <div class="calendar-day has-event">10</div>
+                            <div class="calendar-day has-event">11</div>
+                            <div class="calendar-day has-event">12</div>
+                            <div class="calendar-day has-event">13</div>
+                            <div class="calendar-day has-event">14</div>
+                            <div class="calendar-day">15</div>
+                            <div class="calendar-day has-event today">16</div>
+                            <div class="calendar-day has-event">17</div>
+                            <div class="calendar-day has-event">18</div>
+                            <div class="calendar-day has-event">19</div>
+                            <div class="calendar-day has-event">20</div>
+                            <div class="calendar-day has-event">21</div>
+                            <div class="calendar-day">22</div>
+                            <div class="calendar-day">23</div>
+                            <div class="calendar-day">24</div>
+                            <div class="calendar-day">25</div>
+                            <div class="calendar-day">26</div>
+                            <div class="calendar-day has-event">27</div>
+                            <div class="calendar-day has-event">28</div>
+                            <div class="calendar-day">29</div>
+                            <div class="calendar-day">30</div>
+                            <div class="calendar-day has-event">31</div>
+                        </div>
+                    </div>
+
+                    <!-- Legenda -->
+                    <div class="calendar-legend">
+                        <div class="legend-item">
+                            <span class="legend-dot today-dot"></span>
+                            <span>Hoje</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot event-dot"></span>
+                            <span>Com agendamento</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Appointments List -->
+                <section class="appointments-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-list"></i> Próximos Atendimentos</h2>
+                        <select class="filter-select">
+                            <option>Todos os barbeiros</option>
+                            <option>Carlos</option>
+                            <option>Rafael</option>
+                            <option>Bruno</option>
+                        </select>
+                    </div>
+
+                    <div class="appointments-list">
+                        <div class="appointment-card">
+                            <div class="appointment-time">
+                                <span class="time">09:00</span>
+                                <span class="duration">30 min</span>
+                            </div>
+                            <div class="appointment-info">
+                                <h4>Corte Masculino</h4>
+                                <div class="client-info">
+                                    <span><i class="fas fa-user"></i> João Pedro</span>
+                                    <span><i class="fas fa-phone"></i> (11) 98765-4321</span>
+                                </div>
+                                <div class="barber-info">
+                                    <div class="barber-avatar">CS</div>
+                                    <span>Carlos Silva</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <span class="appointment-status confirmed">Confirmado</span>
+                                <div class="action-buttons">
+                                    <button class="btn-action"><i class="fas fa-check"></i></button>
+                                    <button class="btn-action"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="appointment-card">
+                            <div class="appointment-time">
+                                <span class="time">10:00</span>
+                                <span class="duration">45 min</span>
+                            </div>
+                            <div class="appointment-info">
+                                <h4>Corte + Barba</h4>
+                                <div class="client-info">
+                                    <span><i class="fas fa-user"></i> Marcos Andrade</span>
+                                    <span><i class="fas fa-phone"></i> (11) 97654-3210</span>
+                                </div>
+                                <div class="barber-info">
+                                    <div class="barber-avatar">RS</div>
+                                    <span>Rafael Souza</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <span class="appointment-status pending">Pendente</span>
+                                <div class="action-buttons">
+                                    <button class="btn-action"><i class="fas fa-check"></i></button>
+                                    <button class="btn-action"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="appointment-card">
+                            <div class="appointment-time">
+                                <span class="time">11:30</span>
+                                <span class="duration">30 min</span>
+                            </div>
+                            <div class="appointment-info">
+                                <h4>Barba Terapia</h4>
+                                <div class="client-info">
+                                    <span><i class="fas fa-user"></i> Lucas Ribeiro</span>
+                                    <span><i class="fas fa-phone"></i> (11) 96543-2109</span>
+                                </div>
+                                <div class="barber-info">
+                                    <div class="barber-avatar">BM</div>
+                                    <span>Bruno Martins</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <span class="appointment-status confirmed">Confirmado</span>
+                                <div class="action-buttons">
+                                    <button class="btn-action"><i class="fas fa-check"></i></button>
+                                    <button class="btn-action"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="appointment-card">
+                            <div class="appointment-time">
+                                <span class="time">14:00</span>
+                                <span class="duration">60 min</span>
+                            </div>
+                            <div class="appointment-info">
+                                <h4>Combo Premium</h4>
+                                <div class="client-info">
+                                    <span><i class="fas fa-user"></i> André Costa</span>
+                                    <span><i class="fas fa-phone"></i> (11) 95432-1098</span>
+                                </div>
+                                <div class="barber-info">
+                                    <div class="barber-avatar">CS</div>
+                                    <span>Carlos Silva</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <span class="appointment-status cancelled">Cancelado</span>
+                                <div class="action-buttons">
+                                    <button class="btn-action"><i class="fas fa-redo"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="appointment-card">
+                            <div class="appointment-time">
+                                <span class="time">15:30</span>
+                                <span class="duration">30 min</span>
+                            </div>
+                            <div class="appointment-info">
+                                <h4>Corte Infantil</h4>
+                                <div class="client-info">
+                                    <span><i class="fas fa-user"></i> Pedro Henrique</span>
+                                    <span><i class="fas fa-phone"></i> (11) 94321-0987</span>
+                                </div>
+                                <div class="barber-info">
+                                    <div class="barber-avatar">RS</div>
+                                    <span>Rafael Souza</span>
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <span class="appointment-status confirmed">Confirmado</span>
+                                <div class="action-buttons">
+                                    <button class="btn-action"><i class="fas fa-check"></i></button>
+                                    <button class="btn-action"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Popular Services -->
+            <section class="services-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-fire"></i> Serviços Mais Procurados</h2>
+                    <button class="btn-link">Ver todos <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cut"></i>
+                        </div>
+                        <div class="service-info">
+                            <h4>Corte Masculino</h4>
+                            <p class="price">R$ 45,00</p>
+                            <span class="count">23 agendamentos este mês</span>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="service-info">
+                            <h4>Barba Terapia</h4>
+                            <p class="price">R$ 35,00</p>
+                            <span class="count">18 agendamentos este mês</span>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="service-info">
+                            <h4>Combo Premium</h4>
+                            <p class="price">R$ 75,00</p>
+                            <span class="count">15 agendamentos este mês</span>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <div class="service-info">
+                            <h4>Corte Infantil</h4>
+                            <p class="price">R$ 30,00</p>
+                            <span class="count">12 agendamentos este mês</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
